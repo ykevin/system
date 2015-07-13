@@ -32,8 +32,8 @@ Installation
 
     $ cd
     $ rm -rf .tmux
-    $ git clone https://github.com/ykevin/system.github
-	$cp .tmux ~/ -rf
+    $ git clone https://github.com/ykevin/system.git
+	$ cp .tmux ~/ -rf
     $ ln -s .tmux/.tmux.conf
     $ cp .tmux/.tmux.conf.local .
 
