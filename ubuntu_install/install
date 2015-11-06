@@ -1,0 +1,2 @@
+1、安装五笔,然后重启系统
+sudo apt-get install ibus-table-wubi
