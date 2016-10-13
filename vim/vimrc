@@ -117,6 +117,9 @@ let Tlist_Exit_OnlyWindow=1 "当taglist是最后一个分割窗口时，自动�
 let Tlist_Process_File_Always=0 "是否一直处理tags.1:处理;0:不处理。不是一直实时更新tags，因为没有必要
 let Tlist_Inc_Winwidth=0"
 
+" NERDTree
+map <F10> :NERDTreeToggle<CR>
+
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
 		source /etc/vim/vimrc.local
