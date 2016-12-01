@@ -2,7 +2,16 @@ System Setting Default
 ======================
 		personal develop  config, include:
 
-* vim
+* vim config and vim plugin
 * tmux
 * ubuntu system install bash
-* add git auto completion
+* git auto completion
+
+Install
+=======
+$cd ubuntu_install/
+
+$chmod +x install.sh 
+
+$./install.sh
+
