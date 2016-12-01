@@ -14,8 +14,11 @@ sudo apt-get install -y build-essential python-virtualenv
 cd ../ 
 git submodule update --init &&
 cp ./git-bash-completion/git-completion.bash ~/.git-completion.bash 
-echo "source ~/.git-completion.bash" >> .bashrc
+echo "source ~/.git-completion.bash" >> ~/.bashrc
 source ~/.bashrc
+
+#add git save password
+git config --global credential.helper store 
 
 #建立不同版本的Python开发环境
 #sudo apt-get install python3.5-dev
