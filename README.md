@@ -5,3 +5,4 @@ System Setting Default
 * vim
 * tmux
 * ubuntu system install bash
+* add git auto completion

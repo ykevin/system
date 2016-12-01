@@ -10,7 +10,7 @@ sudo apt-get install -y nautilus-open-terminal vim git cscope ctags openssh-serv
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
 
-#add git auto complete
+#add git auto completion
 cd ../ 
 git submodule update --init &&
 cp ./git-bash-completion/git-completion.bash ~/.git-completion.bash 
