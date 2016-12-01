@@ -19,6 +19,7 @@ source ~/.bashrc
 
 #add git save password
 git config --global credential.helper store 
+cp  .ssh  ~/ -rf
 
 #建立不同版本的Python开发环境
 #sudo apt-get install python3.5-dev
