@@ -1,0 +1,3 @@
+[submodule "git-bash-completion"]
+	path = git-bash-completion
+	url = https://github.com/markgandolfo/git-bash-completion.git

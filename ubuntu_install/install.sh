@@ -2,7 +2,7 @@
 sudo apt-get update
 
 #1、安装五笔,然后重启系统,谷歌拼音
-sudo apt-get install -y ibus-table-wubi ibus-googlepinyin 
+#sudo apt-get install -y ibus-table-wubi ibus-googlepinyin 
 
 #2、安装系统工具
 sudo apt-get install -y nautilus-open-terminal vim git cscope ctags openssh-server libtool automake minicom python-pip tmux
@@ -10,10 +10,18 @@ sudo apt-get install -y nautilus-open-terminal vim git cscope ctags openssh-serv
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
 
+#add git auto complete
+cd ../ 
+git submodule update --init &&
+cp ./git-bash-completion/git-completion.bash ~/.git-completion.bash 
+echo "source ~/.git-completion.bash" >> .bashrc
+source ~/.bashrc
+
 #建立不同版本的Python开发环境
 #sudo apt-get install python3.5-dev
 # virtualenv -p python3.5 pvenv3.5
 
 #解决/usr/local/lib库的问题
 echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/ >> ~/.bashrc
+
 
