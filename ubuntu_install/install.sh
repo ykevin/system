@@ -17,6 +17,10 @@ sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
 
+#add vimrc and vim plugin
+sudo cp ${DIR}/../vim/vimrc /etc/vim/
+sudo cp ${DIR}/../vim/plugin/* /usr/share/vim/vim74/ -rf
+
 #add git auto completion
 cd ${DIR}/../ 
 git submodule update --init &&
