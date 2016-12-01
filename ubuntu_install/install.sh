@@ -1,3 +1,10 @@
+#!/bin/bash 
+
+set -e
+
+DIR=${PWD}
+echo "Current Dir is : ${DIR}"
+
 #更新系统源
 sudo apt-get update
 
@@ -5,21 +12,20 @@ sudo apt-get update
 #sudo apt-get install -y ibus-table-wubi ibus-googlepinyin 
 
 #2、安装系统工具
-sudo apt-get install -y nautilus-open-terminal vim git cscope ctags openssh-server libtool automake minicom python-pip tmux
+sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi
 
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
 
 #add git auto completion
-cd ../ 
+cd ${DIR}/../ 
 git submodule update --init &&
 cp ./git-bash-completion/git-completion.bash ~/.git-completion.bash 
 echo "source ~/.git-completion.bash" >> ~/.bashrc
-source ~/.bashrc
 
 #add git save password
 git config --global credential.helper store 
-cp  .ssh  ~/ -rf
+cp  ${DIR}/../.ssh  ~/ -rf
 
 #建立不同版本的Python开发环境
 #sudo apt-get install python3.5-dev
@@ -28,4 +34,4 @@ cp  .ssh  ~/ -rf
 #解决/usr/local/lib库的问题
 echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/ >> ~/.bashrc
 
-
+source ~/.bashrc
