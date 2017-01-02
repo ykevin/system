@@ -6,6 +6,8 @@ System Setting Default
 * tmux
 * ubuntu system install bash
 * git auto completion
+* add ssh remote password 
+* add rapsberry create img bash
 
 Install
 =======

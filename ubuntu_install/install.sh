@@ -12,7 +12,7 @@ sudo apt-get update
 #sudo apt-get install -y ibus-table-wubi ibus-googlepinyin 
 
 #2、安装系统工具
-sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi meld
+sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi meld sshpass
 
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
