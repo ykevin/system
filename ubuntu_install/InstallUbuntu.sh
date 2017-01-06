@@ -20,6 +20,7 @@ sudo apt-get install -y build-essential python-virtualenv
 #add vimrc and vundle manager
 sudo cp ${DIR}/../vim/vimrc /etc/vim/
 mkdir -p ~/.vim/autoload ~/.vim/bundle 
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle  
 
 #add git auto completion
