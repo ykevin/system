@@ -1,8 +1,8 @@
 System Setting Default
 ======================
-		personal develop  config, include:
+#### personal develop  config, include:
 
-* vim config and vim plugin
+* vim config and vunble plugin
 * tmux
 * ubuntu system install bash
 * git auto completion
@@ -11,9 +11,7 @@ System Setting Default
 
 Install
 =======
-$cd ubuntu_install/
-
-$chmod +x install.sh 
-
+> $cd ubuntu_install/  
+$chmod +x install.sh  
 $./install.sh
 
