@@ -6,16 +6,21 @@ DIR=${PWD}
 echo "Current Dir is : ${DIR}"
 
 #更新系统源
-sudo apt-get update
+#sudo apt-get update
 
 #1、安装五笔,然后重启系统,谷歌拼音
 #sudo apt-get install -y ibus-table-wubi ibus-googlepinyin 
 
 #2、安装系统工具
-sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi meld sshpass
+sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi meld sshpass chromium-browser
 
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
+
+#install arduino
+sudo apt-get install -y arduino arduino-core 
+
+sudo pip install ino
 
 #add vimrc and vundle manager
 sudo cp ${DIR}/../vim/vimrc /etc/vim/
