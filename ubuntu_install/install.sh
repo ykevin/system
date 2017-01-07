@@ -17,11 +17,6 @@ sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
 
-#install arduino
-sudo apt-get install -y arduino arduino-core 
-
-sudo pip install ino
-
 #add vimrc and vundle manager
 sudo cp ${DIR}/../vim/vimrc /etc/vim/
 mkdir -p ~/.vim/autoload ~/.vim/bundle 
@@ -47,3 +42,46 @@ cp  ${DIR}/../.ssh  ~/ -rf
 echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/ >> ~/.bashrc
 
 source ~/.bashrc
+
+echo -n "Need Arduino and ino, Please select yes(y) or no(n) :"
+read Value
+if [ $Value == "y" -o $Value == "yes" ]; then
+	echo "Install Arduino "
+	sudo apt-get install -y arduino-core 
+	sudo pip install ino platformio
+elif [ $Value == "n" -o $Value == "no" ]; then
+	echo "Skip Arduino Install"
+else
+	echo "Skip Arduino Install"
+fi
+
+echo -n "Need Ros system, Please select yes(y) or no(n) :"
+read Value
+if [ $Value == "y" -o $Value == "yes" ]; then
+	echo "Install ROS!"
+	sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+	sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+	sudo apt-get update
+	sudo apt-get install ros-kinetic-desktop-full
+	sudo rosdep init
+	echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+	source ~/.bashrc
+elif [ $Value == "n" -o $Value == "no" ]; then
+	echo "Skip ROS Install"
+else
+	echo "Skip ROS Install"
+fi
+
+
+echo -n "Need Atom IDE, Please select yes(y) or no(n) :"
+read Value
+if [ $Value == "y" -o $Value == "yes" ]; then
+	echo "Install Atom IDE"
+	sudo add-apt-repository ppa:webupd8team/atom  
+	sudo apt-get update  
+	sudo apt-get install atom 
+elif [ $Value == "n" -o $Value == "no" ]; then
+	echo "Skip Atom Install"
+else
+	echo "Skip Atom Install"
+fi
