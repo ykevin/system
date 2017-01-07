@@ -12,7 +12,7 @@ echo "Current Dir is : ${DIR}"
 #sudo apt-get install -y ibus-table-wubi ibus-googlepinyin 
 
 #2、安装系统工具
-sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi meld sshpass chromium-browser
+sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi meld sshpass chromium-browser cmake
 
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
@@ -26,7 +26,8 @@ sudo pip install ino
 sudo cp ${DIR}/../vim/vimrc /etc/vim/
 mkdir -p ~/.vim/autoload ~/.vim/bundle 
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle  
+cd ~/.vim/bundle 
+git clone http://github.com/gmarik/vundle.git  
 
 #add git auto completion
 cd ${DIR}/../ 

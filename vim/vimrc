@@ -107,7 +107,7 @@ function Do_CsTag()
 	endif
 endfunction
 
-nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarToggle<CR>
 "nmap <Leader>tb :TagbarToggle<CR>      "快捷键设置
 let g:tagbar_ctags_bin='ctags'          "ctags程序的路径
 let g:tagbar_width=30                   "窗口宽度的设置
@@ -115,8 +115,8 @@ let g:tagbar_width=30                   "窗口宽度的设置
 
 " NERDTree
 map <F10> :NERDTreeToggle<CR>
-let NERDTreeWinPos='right'
-let NERDTreeWinSize=30
+let NERDTreeWinPos='left'
+let NERDTreeWinSize=25
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
@@ -140,7 +140,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-"Bundle 'gmarik/vundle'
+" Bundle 'gmarik/vundle'
 
 " 可以通过以下四种方式指定插件的来源
 " a) 指定Github中vim-scripts仓库中的插件，直接指定插件名称即可，插件明中的空格使用“-”代替。
@@ -154,6 +154,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'stevearc/vim-arduino'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
+Bundle 'Valloric/YouCompleteMe'
 
 " c) 指定非Github的Git仓库的插件，需要使用git地址
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -162,6 +163,20 @@ Bundle 'majutsushi/tagbar'
 "Bundle 'file:///Users/gmarik/path/to/plugin'
 
 filetype plugin indent on     " required!
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" YCM                                                              
+" 允许自动加载.ycm_extra_conf.py，不再提示                         
+let g:ycm_confirm_extra_conf=0                                     
+" 补全功能在注释中同样有效                                         
+ let g:ycm_complete_in_comments=1                                   
+" 开启tags补全引擎                                                 
+let g:ycm_collect_identifiers_from_tags_files=1                    
+" 键入第一个字符时就开始列出匹配项                                 
+let g:ycm_min_num_of_chars_for_completion=1                        
+" YCM相关快捷键，分别是\gl, \gf, \gg                                                    
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>              
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>               
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 ":BundleList             -列举列表(也就是.vimrc)中配置的所有插件
 ":BundleInstall         -安装列表中的全部插件
