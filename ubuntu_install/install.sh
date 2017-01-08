@@ -12,7 +12,7 @@ echo "Current Dir is : ${DIR}"
 #sudo apt-get install -y ibus-table-wubi ibus-googlepinyin 
 
 #2、安装系统工具
-sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi meld sshpass chromium-browser cmake
+sudo apt-get install -y ssh vim git cscope ctags openssh-server libtool automake minicom python-pip tmux gcc-arm-none-eabi meld sshpass chromium-browser cmake ibus-pinyin
 
 #3、安装开发工具
 sudo apt-get install -y build-essential python-virtualenv
@@ -47,7 +47,7 @@ echo -n "Need Arduino and ino, Please select yes(y) or no(n) :"
 read Value
 if [ $Value == "y" -o $Value == "yes" ]; then
 	echo "Install Arduino "
-	sudo apt-get install -y arduino-core 
+	sudo apt-get install -y arduino-core clang
 	sudo pip install ino platformio
 elif [ $Value == "n" -o $Value == "no" ]; then
 	echo "Skip Arduino Install"
@@ -64,6 +64,7 @@ if [ $Value == "y" -o $Value == "yes" ]; then
 	sudo apt-get update
 	sudo apt-get install ros-kinetic-desktop-full
 	sudo rosdep init
+	rosdep update
 	echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 	source ~/.bashrc
 elif [ $Value == "n" -o $Value == "no" ]; then
