@@ -23,3 +23,8 @@ $./Mateinstall.sh
 > $cd rasp-config  
 $./buildRaspImg.sh
 
+
+#### add serial driver ch340g 
+> $sudo cp ch34x.ko /lib/modules/$(uname -r)/kernel/drivers/usb/serial  
+$sudo depmod  
+$sudo rm /lib/modules/$(uname -r)/kernel/drivers/usb/serial/ch341.ko 
