@@ -29,6 +29,7 @@ set hlsearch "高亮显示结果
 set cindent shiftwidth=4
 set incsearch "在输入要搜索的文字时，vim会实时匹配
 set backspace=indent,eol,start whichwrap+=<,>,[,] "允许退格键的使用
+set pastetoggle=<F9>
 if(g:iswindows==1) "允许鼠标的使用
 	"防止linux终端下无法拷贝
 	if has('mouse')
@@ -154,7 +155,6 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'stevearc/vim-arduino'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
-Bundle 'Valloric/YouCompleteMe'
 
 " c) 指定非Github的Git仓库的插件，需要使用git地址
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -162,21 +162,6 @@ Bundle 'Valloric/YouCompleteMe'
 " d) 指定本地Git仓库中的插件
 "Bundle 'file:///Users/gmarik/path/to/plugin'
 
-filetype plugin indent on     " required!
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-" YCM                                                              
-" 允许自动加载.ycm_extra_conf.py，不再提示                         
-let g:ycm_confirm_extra_conf=0                                     
-" 补全功能在注释中同样有效                                         
- let g:ycm_complete_in_comments=1                                   
-" 开启tags补全引擎                                                 
-let g:ycm_collect_identifiers_from_tags_files=1                    
-" 键入第一个字符时就开始列出匹配项                                 
-let g:ycm_min_num_of_chars_for_completion=1                        
-" YCM相关快捷键，分别是\gl, \gf, \gg                                                    
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>              
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>               
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 ":BundleList             -列举列表(也就是.vimrc)中配置的所有插件
 ":BundleInstall         -安装列表中的全部插件
