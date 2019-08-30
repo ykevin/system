@@ -112,6 +112,9 @@ nmap <F9> :TagbarToggle<CR>
 "nmap <Leader>tb :TagbarToggle<CR>      "快捷键设置
 let g:tagbar_ctags_bin='ctags'          "ctags程序的路径
 let g:tagbar_width=30                   "窗口宽度的设置
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+set ai
+set et
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() "如果是c语言的程序的话，tagbar自动开启
 
 " NERDTree
@@ -155,6 +158,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'stevearc/vim-arduino'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
+Bundle 'rkulla/pydiction'
 
 " c) 指定非Github的Git仓库的插件，需要使用git地址
 "Bundle 'git://git.wincent.com/command-t.git'
